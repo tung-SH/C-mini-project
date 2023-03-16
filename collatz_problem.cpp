@@ -5,8 +5,20 @@ using namespace std;
 bool isEven(int num);
 int collatz_num(int num); 
 void wait_1ms(int msec); 
+void collatz_num_io(void); 
 
 int main(void) {
+    collatz_num_io();
+
+    return 0; 
+}
+
+
+
+/** program to ask user to enter the first number of the collatz number and then show user the process of collatz chain of numbers
+ * 
+*/
+void collatz_num_io(void) {
     int a[1000];
     int i = 0; 
     cout << "Please enter the first number: "; cin >> a[i]; 
@@ -22,10 +34,7 @@ int main(void) {
     } while (count1 < 3); 
 
     wait_1ms(5000); 
-
-    return 0; 
 }
-
 
 /** program to check if the number is even or not
  * 
