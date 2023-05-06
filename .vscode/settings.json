@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stdint.h": "c",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "stdio.h": "c"
     }
 }
