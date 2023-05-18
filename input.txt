@@ -1,0 +1,4 @@
+number of time, hello
+Time left: 10
+number of apple: 13
+N and K: 123 43

@@ -49,15 +49,6 @@ void reverse_str(char* str, int s) {
 
     ++num_call; 
 
-    #ifdef DEBUG8 
-    {   
-        if (num_call == 1) {
-            printf("The reversed string of \"%s\"", str); 
-        }
-        
-    }
-    #endif
-
     if (s >= 2) {
         char mid; 
         mid = str[1 -1]; 
@@ -72,7 +63,7 @@ void reverse_str(char* str, int s) {
     #ifdef DEBUG8
     {
         if (num_end == num_call) {
-            printf(" is %s.\n", str); 
+            printf("The reversed string of \"%s\" is %s.\n", str, result); 
         }
     }
     #endif
@@ -98,7 +89,7 @@ char* itos(int n) {
 
         result[length -1] = last_digit(n) + 48;
 
-        #ifdef DEBUG8
+        #ifdef DEBUG
             printf("current character is %c.\n", result[length -1]); 
         #endif
 

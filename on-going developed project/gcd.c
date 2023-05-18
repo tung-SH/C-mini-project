@@ -32,6 +32,6 @@ int gcd(int a, int b) {
     return result; 
 }
 
-int main(void) {
-    printf("%d", gcd(25, 54)); 
-}
+// int main(void) {
+//     printf("%d", gcd(25, 54)); 
+// }

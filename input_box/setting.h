@@ -50,4 +50,4 @@
  * DEBUG7 -- debugging used for third most mini function used generally 
  * 
 */
-#define DEBUG7
+// #define DEBUG7

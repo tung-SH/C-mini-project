@@ -2,7 +2,7 @@
  * post_office -- xây dựng định nghĩa cho giá trị 
  *      bưu điện
  * 
- * PURPOSE: 
+ * PURPOSE: phát triển mạnh mẽ hơn nữa 
  * 
  * STATUS: 
  * 

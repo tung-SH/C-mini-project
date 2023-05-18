@@ -2,6 +2,7 @@
     "files.associations": {
         "stdint.h": "c",
         "string_view": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "setting.h": "c"
     }
 }
