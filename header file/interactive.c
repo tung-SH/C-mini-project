@@ -1,3 +1,8 @@
+/********************************
+ * interactive.c 
+ * 
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -37,7 +42,7 @@ void wait_1ms(int msec) {
 int strlen(char str[]) {
     int result; 
     result = 0; 
-    bool is_end_of_string = false; 
+    int is_end_of_string = 0; 
     while (!is_end_of_string) {
         is_end_of_string = (str[result] == '\0');
         result++; 
