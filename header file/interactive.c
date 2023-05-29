@@ -1,32 +1,32 @@
-/********************************
- * interactive.c 
+/*****************************************
+ * interactive.c -- thư viện cung cấp các 
+ *      hàm tương tác với file stdout và 
+ *      stdin 
+ * 
+ * PURPOSE: 1. cung cấp các hàm hỗ trợ cho 
+ *              việc tương tác trên terminal,
+ *              cụ thể là file stdout, stdin 
+ *          2. tạo các hàm sau
+ *              2.1 hàm chờ msec milisecond
+ *              2.2 hàm hiệu ứng gõ 
+ *              2.3 hàm xóa màn hình 
+ * 
+ * STATUS: hoàn thành mục đích 
+ * 
+ * SOURCE: tự nghĩ 
  * 
 */
-
-#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+// #include "setting_general.h"
 
-void wait_1ms(int); 
-int strlen(char str[]); 
-void print_type_writing(char str[], int, int);
-void clrscr(void); 
 
-// int main(void) {
-//     for (int i = 1; i <= 10; i++) {
-//         printf("%d", i);
-//         wait_1ms(1000); 
-//         clrscr(); 
-//     }
-    
-    
-// }
-
-// program to clear the screen
-void clrscr() {
-    printf("\e[1;1H\e[2J"); 
-}
-
-// program to wait msec milisecond until go to the next statement
+/**********************************
+ * wait_1ms -- chờ msec milisecond 
+ *      trước khi sang câu lệnh
+ *      tiếp theo 
+ * 
+*/
 void wait_1ms(int msec) {
     while (msec >= 1) {
         int count = 663157; // count for 1ms
@@ -37,27 +37,36 @@ void wait_1ms(int msec) {
     }
 }
 
-
-// program to count the lenght of a string
-int strlen(char str[]) {
-    int result; 
-    result = 0; 
-    int is_end_of_string = 0; 
-    while (!is_end_of_string) {
-        is_end_of_string = (str[result] == '\0');
-        result++; 
-    }
-
-    return result; 
-}
-
-/** program to print the text str with the speed * 100 (milisecond) 
- *      and delay * 100 (milisecond)
+/***********************************************
+ * type_writing -- xâu kí tự xuất hiện theo 
+ *      hiệu ứng từng chữ với tốc độ speed * 100ms
+ *      và nghỉ với thời gian delay * 100ms
  * 
 */
-void print_type_writing(char str[], int speed, int delay) {
-    for (int i = 0; i <= strlen(str) - 1; i++) {
-        printf("%c", str[i]); wait_1ms(speed * 100); 
+void type_writing(const char str[], int speed, int delay) {
+    for (int i = 1; i <= strlen(str); ++i) {
+        printf("%c", str[i -1]); wait_1ms(speed * 100); 
     }
     wait_1ms(delay * 100); 
 }
+
+
+/*************************************
+ * clrscr -- xóa màn hình tương tác 
+ * 
+*/
+void clrscr(void) {
+    system("cls"); 
+}
+
+
+#ifdef DEBUG_G
+
+int main(void) {
+    for (int i = 10; i >= 1; --i) {
+        printf("count down to %d", i); wait_1ms(1000); 
+        clrscr();  
+    }
+}
+
+#endif

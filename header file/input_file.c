@@ -1,9 +1,19 @@
+/****************************************
+ * input_file.c -- cung cấp các hàm làm 
+ *      việc nhanh với file input 
+ * 
+ * 
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// #include "setting.h"
+
 
 const long long MAX_LENGTH = 10000; /* MAX LENGTH OF STRING */
+
+
 /*******************************************
  * num_line_file -- đếm số dòng của 1 file
  * 
@@ -36,8 +46,9 @@ int num_line_file(const char* file_name) {
     return result; 
 }
 
-/*************************************
- * content_line_file -- nội dung dòng của file
+/***********************************************
+ * content_line_file -- nội dung 1 dòng cụ thể 
+ *      của file
  * 
 */
 char* content_line_file(const char* file_name, int lineV) {
@@ -58,9 +69,7 @@ char* content_line_file(const char* file_name, int lineV) {
         strcpy(result, line); 
     }
 
-    #ifdef DEBUG8
-        printf("The content of line %d of file %s:\n\"%s\"\n", lineV, file_name, result);
-    #endif 
+
 
     return result; 
 }
@@ -85,9 +94,6 @@ char* content_file(const char* file_name) {
         }
     }
 
-    #ifdef DEBUG7
-        printf("The content of file %s:\n\"%s\"", file_name, result); 
-    #endif
     
 
 
@@ -95,7 +101,7 @@ char* content_file(const char* file_name) {
 }
 
 
-#ifdef DEBUG7
+#ifdef DEBUG_G
 
 int main(void) {
 
