@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define DEBUG_G
+// #define DEBUG_G
 
 #define DEBUG_G3
 
